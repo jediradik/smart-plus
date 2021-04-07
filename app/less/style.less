@@ -1,0 +1,217 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "global";
+@import "blocks";
+
+
+/*HEADER*/
+.header {
+  background-image: url('../images/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-bottom: 50px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+/*HEADER TOP*/
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 23px;
+  margin-bottom: 70px;
+}
+
+.header-top__logo,
+.mobile__logo {
+  width: 120px;
+  height: 35px;
+  background-image: url('../images/logo.png');
+}
+
+.header-top__list {
+  width: 375px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &-item + &-item {
+    margin-left: 40px;
+  }
+  &-link {
+    font-family: @karla;
+    font-weight: normal;
+    font-size: 18px;
+    color: @primary;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--active {
+      background-color: #292932;
+    }
+  }
+  &-link:hover {
+    background-color: #292932;
+  }
+}
+
+/*HEADER INFO*/
+.header-info__title {
+  font-family: @playfairDisplay;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 1.2;
+  color: @primary;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.header-info__text {
+  font-family: @karla;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: @primary;
+  text-align: center;
+  position: relative;
+  margin-bottom: 75px;
+  &::after {
+    content: url('../images/down.png');
+    position: absolute;
+    left: 49%;
+    bottom: -96%;
+
+  }
+}
+
+/*HEADER FORM*/
+.header-form {
+  background-color: rgba(0, 0, 0, .4);
+  padding: 30px 44px 40px 44px;
+  border-radius: 5px;
+  &__title {
+    font-family: @playfairDisplay;
+    font-weight: normal;
+    font-size: 24px;
+    color: @primary;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/*FORM*/
+.form__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/*INPUT*/
+.form__input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 13px 30px 13px 30px;
+  background-color: rgba(255, 255, 255, .2);
+  border: 0;
+  border-radius: 5px;
+  font-family: @karla;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: @primary;
+  &::placeholder {
+    color: @primary;
+  }
+}
+
+/*SELECT*/
+.select {
+  & select {
+    display: none;
+  }
+}
+
+.select-custom {
+  position: relative;
+  &.is-active .select-custom__body {
+    display: block;
+  }
+  &.is-active .select-custom__header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &__header {
+    display: flex;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 5px;
+  }
+  &__body {
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-top: 0;
+    display: none;
+    background-color: rgba(255, 255, 255, .2);
+  }
+  &__item {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 13px 30px;
+    color: @primary;
+    &:hover {
+      background-color: @orange;
+    }
+  }
+  &__current {
+    width: 324px;
+    font-family: @karla;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: @primary;
+    padding: 13px 30px 13px 30px;
+    border-radius: 5px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 6px 5.5px 0 5.5px;
+      border-color: @primary transparent transparent transparent;
+      right: 10px;
+      top: 50%;
+      z-index: 1;
+    }
+  }
+}
+
+.form__button {
+  text-align: center;
+}
+
+/*TESTIMONIALS*/
+.testimonials {
+  margin-bottom: 100px;
+}
+.testimonials__title {
+  font-family: @playfairDisplay;
+  font-weight: normal;
+  font-size: 48px;
+  color: @secondary;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/*MENU BURGER*/
+.menu-burger {
+  display: none;
+}
+
+@import "media";
